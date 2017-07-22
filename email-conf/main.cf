@@ -18,8 +18,8 @@ append_dot_mydomain = no
 readme_directory = no
 
 # TLS parameters
-smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
-smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_tls_cert_file=/etc/ssl/certs/vikalsolar-ssl-bundle.crt.pem
+smtpd_tls_key_file=/etc/ssl/private/vikalpsolar.key.pem
 smtpd_use_tls=yes
 smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
@@ -58,3 +58,13 @@ smtpd_helo_restrictions = reject_invalid_helo_hostname,
 
 virtual_transport = lmtp:unix:private/dovecot-lmtp
 virtual_mailbox_domains=/etc/postfix/vmail_domains
+tls_preempt_cipherlist = yes
+
+#Protect SMTP to SMTP communications
+smtpd_tls_security_level = may
+smtp_tls_security_level = may
+smtp_tls_loglevel = 1
+smtpd_tls_loglevel = 1
+
+
+
