@@ -1959,7 +1959,7 @@ INSERT INTO configuration (configuration_title, configuration_key, configuration
 
 # Addition of custom fields
 
-ALTER TABLE customers ADD COLUMN custom1 varchar(128);
+ALTER TABLE customers ADD COLUMN custom1 text;
 ALTER TABLE customers ADD COLUMN custom2 varchar(128);
 ALTER TABLE customers ADD COLUMN custom3 varchar(128);
 ALTER TABLE customers ADD COLUMN custom4 varchar(128);
